@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://rc1b-t4gkzyi03xzatdfl.mdb.yandexcloud.net:3306/db1?serverTimezone=Europe/Moscow</property>
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="connection.username">trial_acc</property>
+    <property name="connection.password">zcadqe13</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+
+
+    <mapping class="com.home_task_4.entities.EmailsEntity"/>
+    <mapping resource="com/home_task_4/entities/EmailsEntity.hbm.xml"/>
+    <mapping class="com.home_task_4.entities.UsersEntity"/>
+    <mapping resource="com/home_task_4/entities/UsersEntity.hbm.xml"/>
+
+    <!-- DB schema will be updated if needed -->
+
+
+  </session-factory>
+</hibernate-configuration>
