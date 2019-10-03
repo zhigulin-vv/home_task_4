@@ -22,16 +22,30 @@ class HibernateApplication {
 
         UserDAO userDao = new UserDAO();
 
-        Integer id = 1;
-        String name = "tony@ya.org";
+        Integer id = 10;
+        Integer email_id = 11;
+        String name = "Hank";
+        String email = "ee@typr.xc";
+
+        UsersEntity user_instance = new UsersEntity();
+        user_instance.setId(id);
+        user_instance.setUserName(name);
+
+
+        EmailsEntity email_instance = new EmailsEntity();
+        email_instance.setUser_Id(id);
+        email_instance.setEmail(email);
+        email_instance.setId(email_id);
+
 
         //new HibernateApplication(userDao).insertEmail(id, name);
-        new HibernateApplication(userDao).fetchData(1);
+        new HibernateApplication(userDao).AddUserWithEmail(user_instance, email_instance);
+        new HibernateApplication(userDao).fetchData();
 
     }
 
 
-    private void fetchData(Integer id) throws IOException
+    private void fetchData() throws IOException
     {
         //UsersEntity user = userDAO.find(id);
         List<UsersEntity> users = userDAO.RertiveAll();
@@ -66,5 +80,9 @@ class HibernateApplication {
 
     }
 
+    private void AddUserWithEmail(UsersEntity user, EmailsEntity email)
+    {
+        userDAO.AddUserEmail(user, email);
+    }
 
 }
